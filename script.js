@@ -19,16 +19,20 @@ const auth = firebase.auth();
 // تسجيل الدخول باستخدام جوجل
 function login() {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider)
+
+    firebase.auth().signInWithPopup(provider)
         .then((result) => {
+            console.log("تم تسجيل الدخول بنجاح:", result.user);
             document.getElementById("login").style.display = "none";
             document.getElementById("chat").style.display = "block";
             loadMessages();
         })
         .catch((error) => {
             console.error("خطأ في تسجيل الدخول:", error);
+            alert("حدث خطأ أثناء تسجيل الدخول: " + error.message);
         });
 }
+
 
 // تسجيل الخروج
 function logout() {
