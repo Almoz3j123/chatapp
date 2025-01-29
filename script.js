@@ -15,27 +15,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 const auth = firebase.auth();
 
-// تسجيل الدخول باستخدام جوجل
-function login() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider)
-        .then((result) => {
-            document.getElementById("login").style.display = "none";
-            document.getElementById("chat").style.display = "block";
-            loadMessages();
-        })
-        .catch((error) => {
-            console.error("خطأ في تسجيل الدخول:", error);
-        });
-}
 
-// تسجيل الخروج
-function logout() {
-    auth.signOut().then(() => {
-        document.getElementById("login").style.display = "block";
-        document.getElementById("chat").style.display = "none";
-    });
-}
 
 // إرسال رسالة
 function sendMessage() {
