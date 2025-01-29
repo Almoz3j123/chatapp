@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شات جماعي</title>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="login">
+        <h2>تسجيل الدخول</h2>
+        <button onclick="login()">تسجيل الدخول باستخدام جوجل</button>
+    </div>
+
+    <div id="chat" style="display:none;">
+        <h2>الشات الجماعي</h2>
+        <div id="messages"></div>
+        <input type="text" id="messageInput" placeholder="اكتب رسالتك...">
+        <button onclick="sendMessage()">إرسال</button>
+        <button onclick="logout()">تسجيل الخروج</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
